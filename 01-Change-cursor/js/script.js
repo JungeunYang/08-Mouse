@@ -2,6 +2,7 @@ $(function () {
   // 대상을 변수에 저장
   const $window = $(window);
   const $cursor = $('.cursor');
+  const $spark = $('.spark');
 
   // 마우스가 움직일 때
   $window.on('mousemove', function (e) {
@@ -11,7 +12,7 @@ $(function () {
     let mouseX = e.pageX;
     let mouseY = e.pageY;
 
-    $cursor.css({
+    $cursor.add($spark).css({
       left: mouseX,
       top: mouseY,
     });
@@ -23,5 +24,11 @@ $(function () {
   });
   $window.on('mouseup', function () {
     $cursor.removeClass('click');
+  });
+  $window.on('click', function () {
+    $spark.addClass('click');
+    setTimeout(function () {
+      $spark.removeClass('click');
+    }, 450);
   });
 });
