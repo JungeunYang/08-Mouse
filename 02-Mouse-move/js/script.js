@@ -15,8 +15,11 @@ $(function () {
 
   // 마우스가 움직일 때 좌표값 받아오기
   $window.on('mousemove', function (e) {
-    x = e.pageX;
-    y = e.pageY;
+    x = e.pageX - $window.outerWidth() / 2;
+    y = e.pageY - $window.outerHeight() / 2;
+    //  x = 0일때,
+    //  0 = 0 - 960
+    // -960
   });
 
   moving();
