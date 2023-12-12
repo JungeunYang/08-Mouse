@@ -21,6 +21,7 @@ body {
   background: rgb(255, 255, 213);
   perspective: 600px;
   /* 3d효과를 주기위해서는 부모공간에 perspective: 600px;정도를 줘야함 */
+  overflow: hidden;
 }
 .obj1 {
   position: absolute;
